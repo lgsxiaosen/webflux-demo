@@ -10,8 +10,18 @@ import reactor.core.publisher.Mono;
  **/
 public interface UserService {
 
-    Mono<User> insertUser(User user);
+    Mono<User> insertUser(Mono<User> user);
 
     Flux<User> selectUser(String name);
+
+    Mono<User> getById(Integer id);
+
+    Flux<User> addUsers(Flux<User> users);
+
+    Flux<User> getAll();
+
+    Mono<User> testUser();
+
+    Mono<String> testString();
 
 }
